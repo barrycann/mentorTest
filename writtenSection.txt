@@ -1,28 +1,46 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
+Semantic HTML is markup that gives more meaning to HTML than simply a collection of DIVs, paragraphs, etc.  By using semantic HTML, you can more clearly communicate your code to others who are viewing it and improve on how search engines and other technologies view the site.
 
-2. What is the box model?
+2. What is the box model?  The box model relates one way of organizing data on a web page.  Starting at the outside and working in you have the Margin, Border, Padding, and Content.  By manipulating the box model, you can control the way content displays within sections of your website.
 
 3. What is the difference between IDs and Classes?
+First, an ID always has precedence over a class and for that reason is more powerful but also more prone to misuse and unforseen problems.  
+An ID is delineated with a # while a class is delineated with a .
 
 4. What does the z-index do?
+The Z index alters the layering of HTML elements on the Z axis, or what you might refer to as the depth of the website. (X and Y would be width and height respectively).  By altering the Z index you allow control over what elements appear above or below others.  This should be used carefully, however, so as not to cause conflicts.
 
 5. Summarize what the keyword 'this' is used for?
+This is used to target data contained in an argument of a function.
 
 6. What is a callback?
+A callback is a function that is used as a parameter in another function. 
 
 7. What is a closure?
+A closure is a function that is declared within another function so that the scope of the outer function becomes available to inner function.  This inner function can be called even after the outer function has already been called.
 
 8. How does prototype work?
+Prototype creates a template for code which allows one to create custom functions that can do really specific manipulations of data.  A custom sorting prototype could, for example, sort an array in a very specific way that is more powerful than the default array.sort().
 
 9. What is MVC?
+Model - The data model behind the scenes at which data is placed, altered and deleted
+View - The point of interaction with the software user.  The view is where all software processes rely on user input.
+Controller - The point between the model and the view at which data is manipulated, gathered, calculated, etc.
 
 10. What is the component lifecycle?
+The cycle of how a component of a website comes to life from the DOM, passes through the process of the web software, and is put the in trash.
 
 11. What is REST?
+REST involves using HTTP requests to get, put, post, and delete data from a database.
 
 12. Name three ways of getting data from the URL using express
+
+Body - req.body pulls information from the body typically in the result of a JSON object
+Query - req.query uses a ? followed by a key, a =, and a value. i.e. www.thisthing.com/api?name=Barry
+Parameters - req.params uses an parameter stored in the url to pull data i.e.
+www.thisthing.com/api/api/name/Barry
 
 create table users (
 id serial,
@@ -34,8 +52,19 @@ email varchar(255)
 
 -Get all users:
 
+SELECT * FROM users;
+
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+
+INSERT INTO users (name, email)
+VALUES ("Barry", "barrycann@gmail.com");
 
 -Update the newly created user's name to 'Bobby Boy':
 
+UPDATE users
+SET name="Bobby Boy"
+WHERE name="Barry";
+
 -Delete the newly updated user:
+
+DELETE * WHERE name LIKE "Barry";
